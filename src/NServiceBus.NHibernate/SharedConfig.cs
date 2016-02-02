@@ -47,6 +47,7 @@
         /// </summary>
         /// <param name="persistenceConfiguration"></param>
         /// <returns></returns>
+        [ObsoleteEx(RemoveInVersion = "7", TreatAsErrorFromVersion = "6", ReplacementTypeOrMember = "IMessageHandlerContext.SynchronizedStorageSession.Session")]
         public static PersistenceExtentions<NHibernatePersistence> RegisterManagedSessionInTheContainer(this PersistenceExtentions<NHibernatePersistence> persistenceConfiguration)
         {
             persistenceConfiguration.GetSettings().Set("NHibernate.RegisterManagedSession", true);
