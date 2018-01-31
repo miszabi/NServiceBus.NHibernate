@@ -1,7 +1,7 @@
 ﻿
     
-    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK236CFC11C9055018]') AND parent_object_id = OBJECT_ID('MySaga_CollectionEntry'))
-alter table MySaga_CollectionEntry  drop constraint FK236CFC11C9055018
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKC54239152882B054]') AND parent_object_id = OBJECT_ID('MySaga_CollectionEntry'))
+alter table MySaga_CollectionEntry  drop constraint FKC54239152882B054
 
     
     if exists (select * from dbo.sysobjects where id = object_id(N'MySaga_CollectionEntry') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table MySaga_CollectionEntry
@@ -23,9 +23,9 @@ alter table MySaga_CollectionEntry  drop constraint FK236CFC11C9055018
        primary key (Id)
     )
     
-    create index IDX236CFC11C9055018 on MySaga_CollectionEntry (SagaData_id)
+    create index IDXC54239152882B054 on MySaga_CollectionEntry (SagaData_id)
     
     alter table MySaga_CollectionEntry 
-        add constraint FK236CFC11C9055018 
+        add constraint FKC54239152882B054 
         foreign key (SagaData_id) 
         references MySaga
